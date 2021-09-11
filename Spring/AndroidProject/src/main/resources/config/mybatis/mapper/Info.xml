@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--  mapper:  db접근 및 결과를 반환-->
+<mapper namespace="v">
+	
+	<!-- 회원가입 -->
+	<insert id="insert_vincent" parameterType="vincent">
+		insert into VINCENT_USERS values( 
+		seq_vincent_idx.nextval, #{email}, #{pwd}, #{name}, #{pnum} )
+	</insert>
+	
+	<!-- 로그인 -->
+	<select id="login_vincent" parameterType="vincent" resultType="vincent">
+		SELECT EMAIL, PWD
+		FROM VINCENT_USERS
+		WHERE EMAIL = #{email}
+		AND PWD = #{pwd}
+	</select>
+	
+	<!-- Id, Pwd 찾기 -->
+	<select id="find_vincent" parameterType="vincent" resultType="vincent">
+		SELECT EMAIL, NAME
+		FROM VINCENT_USERS
+		WHERE EMAIL = #{email}
+		AND NAME = #{name}
+	</select>
+	
+	<!-- 티켓 예매 내역 저장하기 -->
+	<insert id="reservation_insert" parameterType="check">
+		insert into reservationcheck(idx, id, title, cast, screen_date, screen_time, price) values(seq_idx_de.nextval, #{id}, #{title}, #{cast}, #{screen_date}, #{screen_time}, #{price})
+	</insert>
+	
+	<select id="selectIdx" parameterType="String" resultType="check">
+		select distinct idx from RESERVATIONCHECK where id = #{id} and rownum = 1 order by id
+	</select>
+	
+	<!-- 이메일 인덱스 -->
+	<select id="selectOne" parameterType="String" resultType="vincent">
+		select distinct idx from VINCENT_USERS where email = #{email} and rownum = 1 order by idx desc
+	</select>
+	
+	<!-- 티켓 예매 내역  불러오기-->
+	<select id="reservation_list" parameterType="java.util.HashMap" resultType="check">
+		select
+r.id,
+r.title,
+r.cast,
+r.screen_date,
+r.screen_time,
+r.price
+from RESERVATIONCHECK r, (select * from VINCENT_USERS where idx = #{idx}) v
+where r.idx = #{r_idx}
+
+	</select>
+	
+	<!-- 티켓 예매 취소 -->
+	<delete id="reservation_delete" parameterType="check">
+		delete from RESERVATIONCHECK where id = #{bid} and email = #{email}
+	</delete>
+	
+</mapper>

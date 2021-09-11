@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"
+        app:cnb_iconColor="#03A9F4"
+        android:title="홈"/>
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_search"
+        app:cnb_iconColor="#8353D8"
+        android:title="검색"/>
+
+    <item
+        android:id="@+id/heart"
+        android:icon="@drawable/ic_heart"
+        app:cnb_iconColor="#F813A4"
+        android:title="좋아요"/>
+
+    <item
+        android:id="@+id/person"
+        android:icon="@drawable/ic_person"
+        app:cnb_iconColor="#84DC1E"
+        android:title="마이페이지"/>
+
+</menu>

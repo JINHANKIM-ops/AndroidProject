@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePageActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white">
+
+    <!--프로필버튼-->
+    <ImageButton
+        android:id="@+id/btn_profile"
+        android:layout_width="75dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/button"
+        android:src="@drawable/setting_pro"/>
+
+    <!--로그인 필요합니다-->
+    <TextView
+        android:id="@+id/text_inform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_profile"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/samael"
+        android:text=""
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="50dp" />
+
+    <!--구독내역,티켓내역, 알림설정-->
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/text_inform">
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/setting_subscribe"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:id="@+id/btn_sub" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/setting_ticket"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:id="@+id/btn_ticket"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/setting_bell"
+            android:layout_weight="1"
+            android:id="@+id/btn_bell"/>
+
+    </LinearLayout>
+    <!--관심 목록-->
+
+    <LinearLayout
+        android:id="@+id/mid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/back_button"
+        android:orientation="vertical"
+        android:layout_below="@id/top">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="관심목록"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextSecondary"/>
+
+    <!-- 공연,아티스트,공연장,지역-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="9dp"
+        android:layout_weight="1"
+        android:background="#fff">
+
+        <!--공연-->
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="공연"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="40dp"
+                android:textColor="#B65656"
+                android:id="@+id/txt_perform"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <!--아티스트-->
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아티스트"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="40dp"
+                android:textColor="#B65656"
+                android:id="@+id/txt_artist"/>
+        </LinearLayout>
+
+        <!--공연장-->
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="공연장"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="40dp"
+                android:textColor="#B65656"
+                android:id="@+id/txt_hall"/>
+
+        </LinearLayout>
+
+        <!--지역-->
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="지역"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="40dp"
+                android:textColor="#B65656"
+                android:id="@+id/txt_part"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/mid">
+    <Button
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="공연기확자세요?"
+        android:textSize="19sp"
+        android:textAlignment="viewStart"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:id="@+id/txt_q1"/>
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="자주 묻는 질문"
+        android:textSize="19sp"
+        android:textAlignment="viewStart"
+        android:layout_marginStart="10dp"
+        android:id="@+id/txt_q2"/>
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="톡 문의"
+        android:textSize="19sp"
+        android:textAlignment="viewStart"
+        android:layout_marginStart="10dp"
+        android:id="@+id/txt_q3"/>
+    <Button
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="공지사항"
+        android:textSize="19sp"
+        android:textAlignment="viewStart"
+        android:layout_marginStart="10dp"
+        android:id="@+id/txt_q4"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="로그인"
+            android:textSize="19sp"
+            android:textAlignment="viewStart"
+            android:layout_marginStart="10dp"
+            android:id="@+id/btn_logout" />
+    </FrameLayout>
+    </LinearLayout>
+
+    <!--하단 바-->
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        app:cnb_menuResource="@menu/nav_item" />
+
+</RelativeLayout>
